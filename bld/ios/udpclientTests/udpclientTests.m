@@ -2,8 +2,8 @@
 //  udpclientTests.m
 //  udpclientTests
 //
-//  Created by Folki Bao on 7/11/14.
-//  Copyright (c) 2014 wme. All rights reserved.
+//  Created by Jamol Bao on 7/11/14.
+//  Copyright (c) 2014. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>

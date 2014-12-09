@@ -2,8 +2,8 @@
 //  util.h
 //  udptest
 //
-//  Created by Folki Bao on 7/8/14.
-//  Copyright (c) 2014 wme. All rights reserved.
+//  Created by Jamol Bao on 7/8/14.
+//  Copyright (c) 2014. All rights reserved.
 //
 
 #ifndef udptest_util_h
@@ -26,8 +26,6 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #endif
-
-#define WBXTP_API
 
 #ifdef WIN32
 #define STRNCPY_S strncpy_s
@@ -73,15 +71,15 @@ do{ \
 #ifdef __cplusplus
 extern "C"{
 #endif
-    WBXTP_API int wtp_resolve_2_ip(const char* host_name, char *ip_buf, int ip_buf_len, int ipv);
-    WBXTP_API int wtp_set_sock_addr(const char* addr, unsigned short port,
+    int km_resolve_2_ip(const char* host_name, char *ip_buf, int ip_buf_len, int ipv);
+    int km_set_sock_addr(const char* addr, unsigned short port,
                                     struct addrinfo* hints, struct sockaddr * sk_addr,
                                     unsigned int sk_addr_len);
-    WBXTP_API int wtp_get_sock_addr(const struct sockaddr * sk_addr, unsigned int sk_addr_len,
+    int km_get_sock_addr(const struct sockaddr * sk_addr, unsigned int sk_addr_len,
                                     char* addr, unsigned int addr_len, unsigned short* port);
-    WBXTP_API bool wtp_is_ipv6_address(const char* addr);
-    WBXTP_API bool wtp_is_ip_address(const char* addr);
-    WBXTP_API int wtp_get_local_ip(char* ip, unsigned int ip_len);
+    bool km_is_ipv6_address(const char* addr);
+    bool km_is_ip_address(const char* addr);
+    int km_get_local_ip(char* ip, unsigned int ip_len);
     uint64_t get_tick_count_us();
     uint64_t get_tick_count_ms();
     int create_udp_fd(const char* bind_addr, uint16_t bind_port);

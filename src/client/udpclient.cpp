@@ -2,8 +2,8 @@
 //  udptest.cpp
 //  udptest
 //
-//  Created by Folki Bao on 7/8/14.
-//  Copyright (c) 2014 wme. All rights reserved.
+//  Created by Jamol Bao on 7/8/14.
+//  Copyright (c) 2014. All rights reserved.
 //
 
 #include <stdio.h>
@@ -40,7 +40,7 @@ extern "C" void startTest(const char* bind_addr, uint16_t bind_port, const char*
             if(getsockname(sfd, (struct sockaddr*)&ss_addr, &addr_len) == 0){
                 char bind_addr[64] = {0};
                 unsigned short bind_port = 0;
-                wtp_get_sock_addr((struct sockaddr*)&ss_addr, addr_len, bind_addr, sizeof(bind_addr), &bind_port);
+                km_get_sock_addr((struct sockaddr*)&ss_addr, addr_len, bind_addr, sizeof(bind_addr), &bind_port);
                 my_printf("bind to %s:%d\n", bind_addr, bind_port);
             }
             struct addrinfo hints = {0};
@@ -49,7 +49,7 @@ extern "C" void startTest(const char* bind_addr, uint16_t bind_port, const char*
             hints.ai_socktype = SOCK_DGRAM;
             hints.ai_flags = AI_ADDRCONFIG;
             
-            wtp_set_sock_addr(str_peer_addr.c_str(), peer_port, &hints, (struct sockaddr *)&ss_addr, addr_len);
+            km_set_sock_addr(str_peer_addr.c_str(), peer_port, &hints, (struct sockaddr *)&ss_addr, addr_len);
             if(AF_INET == ss_addr.ss_family) {
                 addr_len = sizeof(sockaddr_in);
             } else {

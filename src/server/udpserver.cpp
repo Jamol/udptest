@@ -2,8 +2,8 @@
 //  udptest.cpp
 //  udptest
 //
-//  Created by Folki Bao on 7/8/14.
-//  Copyright (c) 2014 wme. All rights reserved.
+//  Created by Jamol Bao on 7/8/14.
+//  Copyright (c) 2014. All rights reserved.
 //
 
 #include <stdio.h>
@@ -30,7 +30,7 @@ extern "C" void startTest(const char* bind_addr, uint16_t bind_port)
             if(getsockname(sfd, (struct sockaddr*)&ss_addr, &addr_len) == 0){
                 char bind_addr[64] = {0};
                 unsigned short bind_port = 0;
-                wtp_get_sock_addr((struct sockaddr*)&ss_addr, addr_len, bind_addr, sizeof(bind_addr), &bind_port);
+                km_get_sock_addr((struct sockaddr*)&ss_addr, addr_len, bind_addr, sizeof(bind_addr), &bind_port);
                 my_printf("bind to %s:%d\n", bind_addr, bind_port);
             }
             int buf_size = 64*1024;
@@ -67,7 +67,7 @@ extern "C" void startTest(const char* bind_addr, uint16_t bind_port)
                     last_seq = sequence;
                     char peer_addr[64] = {0};
                     unsigned short peer_port = 0;
-                    wtp_get_sock_addr((struct sockaddr*)&ss_addr, addr_len, peer_addr, sizeof(peer_addr), &peer_port);
+                    km_get_sock_addr((struct sockaddr*)&ss_addr, addr_len, peer_addr, sizeof(peer_addr), &peer_port);
                     my_printf("received data from %s:%d, first_sequence=%u\n", peer_addr, peer_port, last_seq);
                 }
                 if((int16_t(sequence - last_seq)) < 0){

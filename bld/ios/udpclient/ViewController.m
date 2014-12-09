@@ -2,8 +2,8 @@
 //  ViewController.m
 //  udpclient
 //
-//  Created by Folki Bao on 7/11/14.
-//  Copyright (c) 2014 wme. All rights reserved.
+//  Created by Jamol Bao on 7/11/14.
+//  Copyright (c) 2014. All rights reserved.
 //
 
 #import "ViewController.h"
@@ -27,7 +27,7 @@ void waitTest();
 	// Do any additional setup after loading the view, typically from a nib.
     
     char my_ip[64];
-    if(wtp_get_local_ip(my_ip, sizeof(my_ip)) == 0){
+    if(km_get_local_ip(my_ip, sizeof(my_ip)) == 0){
         //NSString* s = [NSString stringWithFormat:@"%s" , my_ip];
         my_printf("my ip is %s\n", my_ip);
         [self.myIP setText:@"0.0.0.0"];

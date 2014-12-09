@@ -2,8 +2,8 @@
 //  main.cpp
 //  udpserver
 //
-//  Created by Folki Bao on 7/11/14.
-//  Copyright (c) 2014 wme. All rights reserved.
+//  Created by Jamol Bao on 7/11/14.
+//  Copyright (c) 2014. All rights reserved.
 //
 
 #include <iostream>
@@ -20,7 +20,7 @@ int main(int argc, const char * argv[])
         bind_port = atoi(argv[1]);
     }
     char my_ip[64];
-    if(wtp_get_local_ip(my_ip, sizeof(my_ip)) == 0){
+    if(km_get_local_ip(my_ip, sizeof(my_ip)) == 0){
         my_printf("my ip is %s\n", my_ip);
     }
     startTest("0.0.0.0", bind_port);

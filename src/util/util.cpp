@@ -2,8 +2,8 @@
 //  util.c
 //  udptest
 //
-//  Created by Folki Bao on 7/8/14.
-//  Copyright (c) 2014 wme. All rights reserved.
+//  Created by Jamol Bao on 7/8/14.
+//  Copyright (c) 2014. All rights reserved.
 //
 
 #include <stdio.h>
@@ -118,7 +118,7 @@ bool ipv6_api_init()
 #endif
 }
 
-int wtp_resolve_2_ip_v4(const char* host_name, char *ip_buf, int ip_buf_len)
+int km_resolve_2_ip_v4(const char* host_name, char *ip_buf, int ip_buf_len)
 {
     const char* ptr = host_name;
     bool is_digit = true;
@@ -180,7 +180,7 @@ int wtp_resolve_2_ip_v4(const char* host_name, char *ip_buf, int ip_buf_len)
     return -1;
 }
 
-extern "C" WBXTP_API int wtp_resolve_2_ip(const char* host_name, char *ip_buf, int ip_buf_len, int ipv)
+extern "C" int km_resolve_2_ip(const char* host_name, char *ip_buf, int ip_buf_len, int ipv)
 {
     if (NULL == host_name || NULL == ip_buf)
     {
@@ -237,7 +237,7 @@ extern "C" WBXTP_API int wtp_resolve_2_ip(const char* host_name, char *ip_buf, i
     return 0;
 }
 
-extern "C" WBXTP_API int wtp_set_sock_addr(const char* addr, unsigned short port,
+extern "C" int km_set_sock_addr(const char* addr, unsigned short port,
 struct addrinfo* hints,
 struct sockaddr * sk_addr,
     unsigned int sk_addr_len)
@@ -281,7 +281,7 @@ struct sockaddr * sk_addr,
     return 0;
 }
 
-extern "C" WBXTP_API int wtp_get_sock_addr(const struct sockaddr * sk_addr, unsigned int sk_addr_len,
+extern "C" int km_get_sock_addr(const struct sockaddr * sk_addr, unsigned int sk_addr_len,
     char* addr, unsigned int addr_len, unsigned short* port)
 {
 #ifdef WIN32
@@ -307,29 +307,29 @@ extern "C" WBXTP_API int wtp_get_sock_addr(const struct sockaddr * sk_addr, unsi
     return 0;
 }
 
-extern "C" WBXTP_API bool wtp_is_ipv6_address(const char* addr)
+extern "C" bool km_is_ipv6_address(const char* addr)
 {
     sockaddr_storage ss_addr = { 0 };
     struct addrinfo hints = { 0 };
     hints.ai_family = AF_UNSPEC;
     hints.ai_flags = AI_NUMERICHOST;
-    if (wtp_set_sock_addr(addr, 0, &hints, (struct sockaddr *)&ss_addr, sizeof(ss_addr)) != 0)
+    if (km_set_sock_addr(addr, 0, &hints, (struct sockaddr *)&ss_addr, sizeof(ss_addr)) != 0)
     {
         return false;
     }
     return AF_INET6 == ss_addr.ss_family;
 }
 
-extern "C" WBXTP_API bool wtp_is_ip_address(const char* addr)
+extern "C" bool km_is_ip_address(const char* addr)
 {
     sockaddr_storage ss_addr = { 0 };
     struct addrinfo hints = { 0 };
     hints.ai_family = AF_UNSPEC;
     hints.ai_flags = AI_NUMERICHOST;
-    return wtp_set_sock_addr(addr, 0, &hints, (struct sockaddr *)&ss_addr, sizeof(ss_addr)) == 0;
+    return km_set_sock_addr(addr, 0, &hints, (struct sockaddr *)&ss_addr, sizeof(ss_addr)) == 0;
 }
 
-extern "C" WBXTP_API int wtp_get_local_ip(char* ip_buf, unsigned int ip_buf_len)
+extern "C" int km_get_local_ip(char* ip_buf, unsigned int ip_buf_len)
 {
 #ifdef MACOS
     struct ifaddrs *myaddrs, *ifa;
@@ -460,7 +460,7 @@ extern "C" int create_udp_fd(const char* bind_addr, uint16_t bind_port)
     hints.ai_socktype = SOCK_DGRAM;
     hints.ai_flags = AI_ADDRCONFIG; // will block 10 seconds in some case if not set AI_ADDRCONFIG
 
-    if (wtp_set_sock_addr(bind_addr, bind_port, &hints, (struct sockaddr *)&ss_addr, addr_len) < 0){
+    if (km_set_sock_addr(bind_addr, bind_port, &hints, (struct sockaddr *)&ss_addr, addr_len) < 0){
         my_printf("failed to set socket address\n");
         return -1;
     }
