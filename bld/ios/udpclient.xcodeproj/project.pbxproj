@@ -1,0 +1,499 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6F568A36196FC27200DDBFC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F568A35196FC27200DDBFC9 /* Foundation.framework */; };
+		6F568A38196FC27200DDBFC9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F568A37196FC27200DDBFC9 /* CoreGraphics.framework */; };
+		6F568A3A196FC27200DDBFC9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F568A39196FC27200DDBFC9 /* UIKit.framework */; };
+		6F568A40196FC27200DDBFC9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6F568A3E196FC27200DDBFC9 /* InfoPlist.strings */; };
+		6F568A42196FC27200DDBFC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F568A41196FC27200DDBFC9 /* main.m */; };
+		6F568A46196FC27200DDBFC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F568A45196FC27200DDBFC9 /* AppDelegate.m */; };
+		6F568A49196FC27200DDBFC9 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F568A47196FC27200DDBFC9 /* Main_iPhone.storyboard */; };
+		6F568A4C196FC27200DDBFC9 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F568A4A196FC27200DDBFC9 /* Main_iPad.storyboard */; };
+		6F568A4F196FC27200DDBFC9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F568A4E196FC27200DDBFC9 /* ViewController.m */; };
+		6F568A51196FC27200DDBFC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F568A50196FC27200DDBFC9 /* Images.xcassets */; };
+		6F568A58196FC27200DDBFC9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F568A57196FC27200DDBFC9 /* XCTest.framework */; };
+		6F568A59196FC27200DDBFC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F568A35196FC27200DDBFC9 /* Foundation.framework */; };
+		6F568A5A196FC27200DDBFC9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F568A39196FC27200DDBFC9 /* UIKit.framework */; };
+		6F568A62196FC27200DDBFC9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6F568A60196FC27200DDBFC9 /* InfoPlist.strings */; };
+		6F568A64196FC27200DDBFC9 /* udpclientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F568A63196FC27200DDBFC9 /* udpclientTests.m */; };
+		6F568A98196FC3D500DDBFC9 /* udpclient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F568A97196FC3D500DDBFC9 /* udpclient.cpp */; };
+		6F568A9B196FC3E200DDBFC9 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F568A99196FC3E200DDBFC9 /* util.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6F568A5B196FC27200DDBFC9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6F568A2A196FC27200DDBFC9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6F568A31196FC27200DDBFC9;
+			remoteInfo = udpclient;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6F568A32196FC27200DDBFC9 /* udpclient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = udpclient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F568A35196FC27200DDBFC9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6F568A37196FC27200DDBFC9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6F568A39196FC27200DDBFC9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6F568A3D196FC27200DDBFC9 /* udpclient-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "udpclient-Info.plist"; sourceTree = "<group>"; };
+		6F568A3F196FC27200DDBFC9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6F568A41196FC27200DDBFC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6F568A43196FC27200DDBFC9 /* udpclient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "udpclient-Prefix.pch"; sourceTree = "<group>"; };
+		6F568A44196FC27200DDBFC9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6F568A45196FC27200DDBFC9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6F568A48196FC27200DDBFC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		6F568A4B196FC27200DDBFC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		6F568A4D196FC27200DDBFC9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6F568A4E196FC27200DDBFC9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6F568A50196FC27200DDBFC9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6F568A56196FC27200DDBFC9 /* udpclientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = udpclientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F568A57196FC27200DDBFC9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		6F568A5F196FC27200DDBFC9 /* udpclientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "udpclientTests-Info.plist"; sourceTree = "<group>"; };
+		6F568A61196FC27200DDBFC9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6F568A63196FC27200DDBFC9 /* udpclientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = udpclientTests.m; sourceTree = "<group>"; };
+		6F568A97196FC3D500DDBFC9 /* udpclient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = udpclient.cpp; path = ../../../src/client/udpclient.cpp; sourceTree = "<group>"; };
+		6F568A99196FC3E200DDBFC9 /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = util.cpp; path = ../../../src/util/util.cpp; sourceTree = "<group>"; };
+		6F568A9A196FC3E200DDBFC9 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = util.h; path = ../../../src/util/util.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6F568A2F196FC27200DDBFC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F568A38196FC27200DDBFC9 /* CoreGraphics.framework in Frameworks */,
+				6F568A3A196FC27200DDBFC9 /* UIKit.framework in Frameworks */,
+				6F568A36196FC27200DDBFC9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F568A53196FC27200DDBFC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F568A58196FC27200DDBFC9 /* XCTest.framework in Frameworks */,
+				6F568A5A196FC27200DDBFC9 /* UIKit.framework in Frameworks */,
+				6F568A59196FC27200DDBFC9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6F568A29196FC27200DDBFC9 = {
+			isa = PBXGroup;
+			children = (
+				6F568A3B196FC27200DDBFC9 /* udpclient */,
+				6F568A5D196FC27200DDBFC9 /* udpclientTests */,
+				6F568A34196FC27200DDBFC9 /* Frameworks */,
+				6F568A33196FC27200DDBFC9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6F568A33196FC27200DDBFC9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6F568A32196FC27200DDBFC9 /* udpclient.app */,
+				6F568A56196FC27200DDBFC9 /* udpclientTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6F568A34196FC27200DDBFC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F568A35196FC27200DDBFC9 /* Foundation.framework */,
+				6F568A37196FC27200DDBFC9 /* CoreGraphics.framework */,
+				6F568A39196FC27200DDBFC9 /* UIKit.framework */,
+				6F568A57196FC27200DDBFC9 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6F568A3B196FC27200DDBFC9 /* udpclient */ = {
+			isa = PBXGroup;
+			children = (
+				6F568A99196FC3E200DDBFC9 /* util.cpp */,
+				6F568A9A196FC3E200DDBFC9 /* util.h */,
+				6F568A97196FC3D500DDBFC9 /* udpclient.cpp */,
+				6F568A44196FC27200DDBFC9 /* AppDelegate.h */,
+				6F568A45196FC27200DDBFC9 /* AppDelegate.m */,
+				6F568A47196FC27200DDBFC9 /* Main_iPhone.storyboard */,
+				6F568A4A196FC27200DDBFC9 /* Main_iPad.storyboard */,
+				6F568A4D196FC27200DDBFC9 /* ViewController.h */,
+				6F568A4E196FC27200DDBFC9 /* ViewController.m */,
+				6F568A50196FC27200DDBFC9 /* Images.xcassets */,
+				6F568A3C196FC27200DDBFC9 /* Supporting Files */,
+			);
+			path = udpclient;
+			sourceTree = "<group>";
+		};
+		6F568A3C196FC27200DDBFC9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6F568A3D196FC27200DDBFC9 /* udpclient-Info.plist */,
+				6F568A3E196FC27200DDBFC9 /* InfoPlist.strings */,
+				6F568A41196FC27200DDBFC9 /* main.m */,
+				6F568A43196FC27200DDBFC9 /* udpclient-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6F568A5D196FC27200DDBFC9 /* udpclientTests */ = {
+			isa = PBXGroup;
+			children = (
+				6F568A63196FC27200DDBFC9 /* udpclientTests.m */,
+				6F568A5E196FC27200DDBFC9 /* Supporting Files */,
+			);
+			path = udpclientTests;
+			sourceTree = "<group>";
+		};
+		6F568A5E196FC27200DDBFC9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6F568A5F196FC27200DDBFC9 /* udpclientTests-Info.plist */,
+				6F568A60196FC27200DDBFC9 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6F568A31196FC27200DDBFC9 /* udpclient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F568A67196FC27200DDBFC9 /* Build configuration list for PBXNativeTarget "udpclient" */;
+			buildPhases = (
+				6F568A2E196FC27200DDBFC9 /* Sources */,
+				6F568A2F196FC27200DDBFC9 /* Frameworks */,
+				6F568A30196FC27200DDBFC9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = udpclient;
+			productName = udpclient;
+			productReference = 6F568A32196FC27200DDBFC9 /* udpclient.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6F568A55196FC27200DDBFC9 /* udpclientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F568A6A196FC27200DDBFC9 /* Build configuration list for PBXNativeTarget "udpclientTests" */;
+			buildPhases = (
+				6F568A52196FC27200DDBFC9 /* Sources */,
+				6F568A53196FC27200DDBFC9 /* Frameworks */,
+				6F568A54196FC27200DDBFC9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6F568A5C196FC27200DDBFC9 /* PBXTargetDependency */,
+			);
+			name = udpclientTests;
+			productName = udpclientTests;
+			productReference = 6F568A56196FC27200DDBFC9 /* udpclientTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6F568A2A196FC27200DDBFC9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = wme;
+				TargetAttributes = {
+					6F568A55196FC27200DDBFC9 = {
+						TestTargetID = 6F568A31196FC27200DDBFC9;
+					};
+				};
+			};
+			buildConfigurationList = 6F568A2D196FC27200DDBFC9 /* Build configuration list for PBXProject "udpclient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6F568A29196FC27200DDBFC9;
+			productRefGroup = 6F568A33196FC27200DDBFC9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6F568A31196FC27200DDBFC9 /* udpclient */,
+				6F568A55196FC27200DDBFC9 /* udpclientTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6F568A30196FC27200DDBFC9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F568A4C196FC27200DDBFC9 /* Main_iPad.storyboard in Resources */,
+				6F568A51196FC27200DDBFC9 /* Images.xcassets in Resources */,
+				6F568A49196FC27200DDBFC9 /* Main_iPhone.storyboard in Resources */,
+				6F568A40196FC27200DDBFC9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F568A54196FC27200DDBFC9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F568A62196FC27200DDBFC9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6F568A2E196FC27200DDBFC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F568A4F196FC27200DDBFC9 /* ViewController.m in Sources */,
+				6F568A46196FC27200DDBFC9 /* AppDelegate.m in Sources */,
+				6F568A98196FC3D500DDBFC9 /* udpclient.cpp in Sources */,
+				6F568A9B196FC3E200DDBFC9 /* util.cpp in Sources */,
+				6F568A42196FC27200DDBFC9 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F568A52196FC27200DDBFC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F568A64196FC27200DDBFC9 /* udpclientTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6F568A5C196FC27200DDBFC9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6F568A31196FC27200DDBFC9 /* udpclient */;
+			targetProxy = 6F568A5B196FC27200DDBFC9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6F568A3E196FC27200DDBFC9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6F568A3F196FC27200DDBFC9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6F568A47196FC27200DDBFC9 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6F568A48196FC27200DDBFC9 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		6F568A4A196FC27200DDBFC9 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6F568A4B196FC27200DDBFC9 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		6F568A60196FC27200DDBFC9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6F568A61196FC27200DDBFC9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6F568A65196FC27200DDBFC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6F568A66196FC27200DDBFC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6F568A68196FC27200DDBFC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "udpclient/udpclient-Prefix.pch";
+				INFOPLIST_FILE = "udpclient/udpclient-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = ../../util;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6F568A69196FC27200DDBFC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "udpclient/udpclient-Prefix.pch";
+				INFOPLIST_FILE = "udpclient/udpclient-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = ../../util;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		6F568A6B196FC27200DDBFC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/udpclient.app/udpclient";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "udpclient/udpclient-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "udpclientTests/udpclientTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		6F568A6C196FC27200DDBFC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/udpclient.app/udpclient";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "udpclient/udpclient-Prefix.pch";
+				INFOPLIST_FILE = "udpclientTests/udpclientTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6F568A2D196FC27200DDBFC9 /* Build configuration list for PBXProject "udpclient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F568A65196FC27200DDBFC9 /* Debug */,
+				6F568A66196FC27200DDBFC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6F568A67196FC27200DDBFC9 /* Build configuration list for PBXNativeTarget "udpclient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F568A68196FC27200DDBFC9 /* Debug */,
+				6F568A69196FC27200DDBFC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6F568A6A196FC27200DDBFC9 /* Build configuration list for PBXNativeTarget "udpclientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F568A6B196FC27200DDBFC9 /* Debug */,
+				6F568A6C196FC27200DDBFC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6F568A2A196FC27200DDBFC9 /* Project object */;
+}

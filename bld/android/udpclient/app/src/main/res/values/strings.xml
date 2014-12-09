@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">udpclient</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="my_ip">my IP:</string>
+    <string name="my_port">my port:</string>
+    <string name="peer_ip">peer IP:</string>
+    <string name="peer_port">peer port:</string>
+    <string name="bandwidth">bandwidth:</string>
+    <string name="tiem_slice">time slice:</string>
+    <string name="burst_bytes">burst bytes:</string>
+
+</resources>
