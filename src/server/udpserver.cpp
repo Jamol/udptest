@@ -10,8 +10,13 @@
 #include <stdlib.h>
 #include <thread>
 #include <string>
+#include <chrono>
 
 #include "util.h"
+
+using namespace std::chrono;
+
+#define now_tick_ms() duration_cast<milliseconds>(steady_clock::now().time_since_epoch())
 
 static std::thread g_thread;
 static bool g_stop = false;
@@ -43,8 +48,8 @@ extern "C" void startTest(const char* bind_addr, uint16_t bind_port)
             unsigned int cur_recv_count = 0;
             unsigned int cur_lost_count = 0;
             uint16_t last_seq = 0;
-            uint64_t start_tick = get_tick_count_ms();
-            uint64_t end_tick = start_tick;
+            milliseconds start_tick = now_tick_ms();
+            milliseconds end_tick = now_tick_ms();
             bool first_data = true;
             while (!g_stop) {
                 ss_addr = {0};
@@ -56,7 +61,7 @@ extern "C" void startTest(const char* bind_addr, uint16_t bind_port)
                     return ;
                 }
                 if(0 == recv_count){
-                    start_tick = get_tick_count_ms();
+                    start_tick = now_tick_ms();
                 }
                 ++recv_count;
                 cur_recv_bytes += ret;
@@ -79,13 +84,13 @@ extern "C" void startTest(const char* bind_addr, uint16_t bind_port)
                 } else {
                     last_seq = sequence;
                 }
-                end_tick = get_tick_count_ms();
-                uint32_t diff = (uint32_t)(end_tick - start_tick);
-                if(diff > 5000){
-                    uint32_t recv_rate = cur_recv_bytes*1000/diff;
-                    printf("sequence=%u, len=%ld, recv_count=%u, cur_recv_bytes=%u, diff=%u, recv_rate=%u"
+                end_tick = now_tick_ms();
+                milliseconds diff = end_tick-start_tick;
+                if(diff.count() > 5000){
+                    uint32_t recv_rate = cur_recv_bytes*1000/diff.count();
+                    printf("sequence=%u, len=%ld, recv_count=%u, cur_recv_bytes=%u, diff=%lld, recv_rate=%u"
                            ", cur_recv_count=%u, cur_lost_count=%u, loss_rate=%f\n",
-                           sequence, ret, recv_count, cur_recv_bytes, diff, recv_rate,
+                           sequence, ret, recv_count, cur_recv_bytes, diff.count(), recv_rate,
                            cur_recv_count, cur_lost_count, cur_lost_count*1.0/(cur_recv_count + cur_lost_count));
                     cur_recv_bytes = 0;
                     cur_recv_count = 0;

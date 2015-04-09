@@ -10,8 +10,13 @@
 #include <stdlib.h>
 #include <thread>
 #include <string>
+#include <chrono>
 
 #include "util.h"
+
+using namespace std::chrono;
+
+#define now_tick_ms() duration_cast<milliseconds>(steady_clock::now().time_since_epoch())
 
 static std::thread s_thread;
 static bool s_stop = false;
@@ -69,17 +74,17 @@ extern "C" void startTest(const char* bind_addr, uint16_t bind_port, const char*
             uint32_t loop_count = 1000/slice_ms;
             uint32_t average_bytes_per_slice = bw/loop_count;
             uint32_t bytes_sent_in_this_second = 0;
-            uint64_t start_tick = get_tick_count_ms();
+            milliseconds start_tick = now_tick_ms();
             uint32_t cur_send_bytes = 0;
             if(burst_bytes < average_bytes_per_slice){
                 burst_bytes = average_bytes_per_slice;
             }
             srand((unsigned int)time(NULL));
             while (!s_stop) {
-                uint64_t second_start_tick = get_tick_count_ms();
+                milliseconds second_start_tick = now_tick_ms();
                 bytes_sent_in_this_second = 0;
                 for (uint32_t i=0; i<loop_count; ++i) {// this second
-                    uint64_t slice_start_tick = get_tick_count_ms();
+                    milliseconds slice_start_tick = now_tick_ms();
                     uint32_t cur_slice_bytes_to_send = average_bytes_per_slice;
                     uint32_t left_bytes_in_this_second = bw - bytes_sent_in_this_second;
                     if(left_bytes_in_this_second < burst_bytes){
@@ -112,27 +117,27 @@ extern "C" void startTest(const char* bind_addr, uint16_t bind_port, const char*
                     
                     bytes_sent_in_this_second += bytes_sent_in_this_slice;
                     
-                    uint64_t slice_end_tick = get_tick_count_ms();
-                    uint32_t diff = uint32_t(slice_end_tick - slice_start_tick);
-                    if(diff < slice_ms - 1){
-                        sleep_ms(slice_ms-diff-1);
+                    milliseconds slice_end_tick = now_tick_ms();
+                    milliseconds diff = slice_end_tick - slice_start_tick;
+                    if(diff.count() < slice_ms - 1){
+                        std::this_thread::sleep_for(milliseconds(slice_ms-diff.count()-1));
                     }
                     
                     if(bytes_sent_in_this_second >= bw){
                         break;
                     }
                 }
-                uint64_t end_tick = get_tick_count_ms();
-                uint32_t diff_ms = (uint32_t)(end_tick - second_start_tick);
-                if(diff_ms < 999){
-                    sleep_ms(1000 - diff_ms);
-                    end_tick += 1000 - diff_ms;
+                milliseconds end_tick = now_tick_ms();
+                milliseconds diff = end_tick - second_start_tick;
+                if(diff.count() < 999){
+                    std::this_thread::sleep_for(milliseconds(1000 - diff.count()));
+                    end_tick += milliseconds(1000-diff.count());
                 }
-                diff_ms = (uint32_t)(end_tick - start_tick);
-                if(diff_ms > 5000){
-                    uint32_t send_rate = cur_send_bytes*1000/diff_ms;
-                    my_printf("sequence=%u, send_bytes=%u, diff=%u, send_rate=%u\n",
-                              sequence, cur_send_bytes, diff_ms, send_rate);
+                diff = end_tick - start_tick;
+                if(diff.count() > 5000){
+                    uint32_t send_rate = cur_send_bytes*1000/diff.count();
+                    my_printf("sequence=%u, send_bytes=%u, diff=%lld, send_rate=%u\n",
+                              sequence, cur_send_bytes, diff.count(), send_rate);
                     cur_send_bytes = 0;
                     start_tick = end_tick;
                 }

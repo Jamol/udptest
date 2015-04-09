@@ -434,23 +434,6 @@ extern "C" int km_get_local_ip(char* ip_buf, unsigned int ip_buf_len)
 #endif
 }
 
-extern "C" uint64_t get_tick_count_us()
-{
-#ifdef WIN32
-    return GetTickCount64() * 1000;
-#else
-    struct timeval tv;
-    gettimeofday(&tv, 0);
-    uint64_t tick = tv.tv_sec * 1000000 + tv.tv_usec;
-    return tick;
-#endif
-}
-
-extern "C" uint64_t get_tick_count_ms()
-{
-    return get_tick_count_us() / 1000;
-}
-
 extern "C" int create_udp_fd(const char* bind_addr, uint16_t bind_port)
 {
     sockaddr_storage ss_addr = { 0 };

@@ -139,7 +139,7 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
         } catch (SocketException ex) {
-            Log.e("getLocalIpAddress, exception", ex.toString());
+            Log.e("getLocalIpAddress", ex.toString());
         }
         return "";
     }

@@ -62,12 +62,6 @@ do{ \
 #define my_printf printf
 #endif
 
-#ifdef WIN32
-#define sleep_ms(x) Sleep(x)
-#else
-#define sleep_ms(x) usleep((x)*1000)
-#endif
-
 #ifdef __cplusplus
 extern "C"{
 #endif
@@ -80,8 +74,6 @@ extern "C"{
     bool km_is_ipv6_address(const char* addr);
     bool km_is_ip_address(const char* addr);
     int km_get_local_ip(char* ip, unsigned int ip_len);
-    uint64_t get_tick_count_us();
-    uint64_t get_tick_count_ms();
     int create_udp_fd(const char* bind_addr, uint16_t bind_port);
 #ifdef __cplusplus
 }
